@@ -25,7 +25,7 @@ export const NewHouseForm = (props) => {
                     value={name}
                     />
                 
-                <button className='btn btn-dark m-2' type='submit'>Add House</button>
+                <button type='submit'>Add House</button>
             </form>
         </div>
     )
