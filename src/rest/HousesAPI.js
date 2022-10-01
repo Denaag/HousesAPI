@@ -8,24 +8,24 @@ class HousesApi {
             const resp = await fetch(HOUSES_ENDPOINT);
             const data = await resp.json();
             return data;
-        } catch (e) {
+        } catch (e) { //in case anything goes wrong this will handle the failure for us
             console.log('oops, looks like fetchHouses had an issue.', e);
         }
     }
 
-    /*This put request will add new rooms or delete rooms from our house*/
+    /*This put request will add new rooms or delete rooms from our house - this will take parameter and this will update the house thats being passed into it */
     put = async (house) => {
         try {
             console.log('inside try block for updating houses');
-            const resp = await fetch(`${HOUSES_ENDPOINT}/${house._id}`, {
+            const resp = await fetch(`${HOUSES_ENDPOINT}/${house._id}`, { //will get the info for us
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(house)
             });
-            return await resp.json();
-        } catch (e) {
+            return await resp.json();// this returns the variable/data just like lines 10-12 do for the await resp.json
+        } catch (e) { //in case anything goes wrong this will handle the failure for us
             console.log('oops, looks like we had an issue updating our house .', e);
         }
     }
@@ -39,8 +39,8 @@ class HousesApi {
                 },
                 body: JSON.stringify(house)
             });
-            return await resp.json();
-        } catch (e) {
+            return await resp.json();// this returns the variable/data just like lines 10-12 do for the await resp.json
+        } catch (e) { //in case anything goes wrong this will handle the failure for us
             console.log('oops, looks like we had an issue adding new house.', e);
         }
     }
@@ -54,8 +54,8 @@ class HousesApi {
                 },
                 body: JSON.stringify(house)
             });
-            return await resp.json();
-        } catch (e) {
+            return await resp.json(); // this returns the variable/data just like lines 10-12 do for the await resp.json
+        } catch (e) { //in case anything goes wrong this will handle the failure for us
             console.log('oops, looks like we had an issue deleting house.', e);
         }
     }

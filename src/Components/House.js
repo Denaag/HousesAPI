@@ -62,7 +62,7 @@ export const House = (props) => { //functional component
             
             <h1>{house.room}</h1>
             {
-                rooms({ rooms, houseId: house._id, deleteRoom})
+                rooms({ houseId: house._id, rooms, deleteRoom})
             }
             <NewRoomForm addNewRoom={addNewRoom} />
         </div>
